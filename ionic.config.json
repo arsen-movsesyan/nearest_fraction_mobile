@@ -1,0 +1,7 @@
+{
+  "name": "nearest_fraction_mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
