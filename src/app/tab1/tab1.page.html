@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      To Binary
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    Convert decimal fraction to binary equivalent
+  </ion-text>
+  <ion-grid>
+    <ion-row class="ion-margin-top">
+      <ion-col>
+        <ion-input type="number" label="Fraction" placeholder="1.234" [(ngModel)]="fraction"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-select label="Precision" [(ngModel)]="precision">
+          <ion-select-option *ngFor="let pr of precisions" [value]="pr.value">1 / {{pr.precision}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <ion-button color="success" (click)="convert()" [disabled]="!fraction">Convert</ion-button>
+  </ion-grid>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
 </ion-content>
