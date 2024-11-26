@@ -3,11 +3,11 @@ import {ResultModel} from "../models/result.model";
 import {ConverterService} from "../services/converter.service";
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-to-binary',
+  templateUrl: 'to-binary.html',
+  styleUrls: ['to-binary.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class ToBinaryComponent implements OnInit {
   precision: number;
   fraction: number;
   result: ResultModel;

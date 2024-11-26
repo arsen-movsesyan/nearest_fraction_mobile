@@ -7,6 +7,8 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import {ResultComponent} from "../result/result.component";
+import {DecimalDisplayComponent} from "../result/decimal-display/decimal-display.component";
+import {FractionDisplayComponent} from "../result/fraction-display/fraction-display.component";
 
 @NgModule({
   imports: [
@@ -15,6 +17,16 @@ import {ResultComponent} from "../result/result.component";
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage, ResultComponent]
+  exports: [
+    ResultComponent,
+    DecimalDisplayComponent,
+    FractionDisplayComponent
+  ],
+  declarations: [
+    TabsPage,
+    ResultComponent,
+    DecimalDisplayComponent,
+    FractionDisplayComponent
+  ]
 })
 export class TabsPageModule {}

@@ -25,6 +25,7 @@
     <ion-button color="success" (click)="convert()" [disabled]="!fraction">Convert</ion-button>
   </ion-grid>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <app-result [result]="result" [convertor]="1" *ngIf="!!result"></app-result>
+<!--  <app-explore-container name="Tab 1 page"></app-explore-container>-->
 
 </ion-content>
