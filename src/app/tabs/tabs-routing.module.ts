@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/to-binary',
+    redirectTo: '/tabs',
     pathMatch: 'full'
   }
 ];
