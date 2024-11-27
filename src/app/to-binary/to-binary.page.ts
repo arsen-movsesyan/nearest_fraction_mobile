@@ -5,7 +5,7 @@ import {ConverterService} from "../services/converter.service";
 @Component({
   selector: 'app-to-binary',
   templateUrl: 'to-binary.html',
-  styleUrls: ['to-binary.page.scss']
+  styleUrls: ['to-binary.scss']
 })
 export class ToBinaryComponent implements OnInit {
   precision: number;

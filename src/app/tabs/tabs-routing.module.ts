@@ -13,11 +13,11 @@ const routes: Routes = [
       },
       {
         path: 'to-decimal',
-        loadChildren: () => import('../to-decimal/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../to-decimal/to-decimal.module').then(m => m.ToDecimalPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/to-binary',
+        redirectTo: '/tabs/to-decimal',
         pathMatch: 'full'
       }
     ]

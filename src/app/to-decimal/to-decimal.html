@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      To Decimal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    Convert any fraction to decimal equivalent
+  </ion-text>
+
+  <ion-grid>
+
+    <ion-row class="ion-margin-top">
+      <ion-col>
+        <ion-input type="number" label="Whole" placeholder="1" [(ngModel)]="whole"></ion-input>
+      </ion-col>
+
+      <ion-col size="auto">
+        <ion-input type="number" [(ngModel)]="numerator" min="1"></ion-input> /
+        <ion-input type="number" [(ngModel)]="denominator" min="1"></ion-input>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-select [(ngModel)]="precision" label="Presision" (ionChange)="convert()">
+        <ion-select-option *ngFor="let pr of precisions" [value]="pr">{{pr}}</ion-select-option>
+      </ion-select>
+    </ion-row>
+
+    <ion-button color="success" (click)="convert()" [disabled]="convertDisabled">Convert</ion-button>
+
+    <ion-button color="primary" (click)="reset()" class="ion-float-end" *ngIf="!!result">
+      Reset
+    </ion-button>
+
+  </ion-grid>
+
+  <app-result [result]="result" [convertor]="2" *ngIf="!!result"></app-result>
+
+</ion-content>
