@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {ToBinaryPage} from "./to-binary/to-binary.page";
+import {ToDecimalPage} from "./to-decimal/to-decimal.page";
 
 const routes: Routes = [
   {
@@ -9,17 +11,12 @@ const routes: Routes = [
     children: [
       {
         path: 'to-binary',
-        loadChildren: () => import('../to-binary/to-binary.module').then(m => m.ToBinaryPageModule)
+        component: ToBinaryPage,
       },
       {
         path: 'to-decimal',
-        loadChildren: () => import('../to-decimal/to-decimal.module').then(m => m.ToDecimalPageModule)
+        component: ToDecimalPage,
       },
-      {
-        path: '',
-        redirectTo: '/tabs/to-decimal',
-        pathMatch: 'full'
-      }
     ]
   },
   {

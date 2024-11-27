@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ResultModel} from "../models/result.model";
-import {ConverterService} from "../services/converter.service";
+import {ResultModel} from "../../models/result.model";
+import {ConverterService} from "../../services/converter.service";
 
 @Component({
   selector: 'app-to-binary',
   templateUrl: 'to-binary.html',
   styleUrls: ['to-binary.scss']
 })
-export class ToBinaryComponent implements OnInit {
+export class ToBinaryPage implements OnInit {
   precision: number;
   fraction: number | null;
   result: ResultModel| null;

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ResultModel} from "../models/result.model";
-import {ConverterService} from "../services/converter.service";
+import {ResultModel} from "../../models/result.model";
+import {ConverterService} from "../../services/converter.service";
 
 @Component({
   selector: 'app-to-decimal',
