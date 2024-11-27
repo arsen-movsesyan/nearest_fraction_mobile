@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'to-binary',
-        loadChildren: () => import('../to-binary/to-binary.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../to-binary/to-binary.module').then(m => m.ToBinaryPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'to-decimal',
+        loadChildren: () => import('../to-decimal/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: '',

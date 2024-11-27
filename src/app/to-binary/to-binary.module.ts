@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { ToBinaryComponent } from './to-binary.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1PageRoutingModule } from './to-binary.routing.module';
 import {TabsPageModule} from "../tabs/tabs.module";
+import {ToBinaryRoutingModule} from "./to-binary.routing.module";
 
 @NgModule({
   imports: [
@@ -14,9 +14,9 @@ import {TabsPageModule} from "../tabs/tabs.module";
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule,
+    ToBinaryRoutingModule,
     TabsPageModule
   ],
   declarations: [ToBinaryComponent]
 })
-export class Tab1PageModule {}
+export class ToBinaryPageModule {}

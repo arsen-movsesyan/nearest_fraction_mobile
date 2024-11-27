@@ -8,7 +8,7 @@ export class ConverterService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getResultForToBinary(fraction: number, precision: number) {
+  getResultForToBinary(fraction: number|null, precision: number) {
     return this.httpClient.post<ResultModel>(`${backendServer}/to-binary`, {decimal_fraction: fraction, precision});
   }
 

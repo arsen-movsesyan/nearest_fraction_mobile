@@ -9,8 +9,8 @@ import {ConverterService} from "../services/converter.service";
 })
 export class ToBinaryComponent implements OnInit {
   precision: number;
-  fraction: number;
-  result: ResultModel;
+  fraction: number | null;
+  result: ResultModel| null;
 
   constructor(
     private converterService: ConverterService
@@ -18,6 +18,12 @@ export class ToBinaryComponent implements OnInit {
 
   ngOnInit() {
     this.reset();
+    // this.result = {
+    //   decimal: 43.23,
+    //   precision: 5,
+    //   fraction: "43 7 / 32",
+    //   whole: 43, numerator: 7, denominator: 32
+    // }
   }
 
   get precisions() {
@@ -31,14 +37,17 @@ export class ToBinaryComponent implements OnInit {
   }
 
   convert() {
-    this.converterService.getResultForToBinary(this.fraction, this.precision)
-      .subscribe(result => {
-        this.result = result;
-      })
+    if (!!this.fraction) {
+      this.converterService.getResultForToBinary(this.fraction, this.precision)
+        .subscribe(result => {
+          this.result = result;
+        })
+    }
   }
 
   reset() {
-    this.fraction = 0;
+    this.fraction = null;
     this.precision = 5;
+    this.result = null;
   }
 }

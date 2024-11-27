@@ -16,13 +16,17 @@
         <ion-input type="number" label="Fraction" placeholder="1.234" [(ngModel)]="fraction"></ion-input>
       </ion-col>
       <ion-col>
-        <ion-select label="Precision" [(ngModel)]="precision">
+        <ion-select label="Precision" [(ngModel)]="precision" (ionChange)="convert()">
           <ion-select-option *ngFor="let pr of precisions" [value]="pr.value">1 / {{pr.precision}}</ion-select-option>
         </ion-select>
       </ion-col>
     </ion-row>
 
     <ion-button color="success" (click)="convert()" [disabled]="!fraction">Convert</ion-button>
+
+    <ion-button color="primary" (click)="reset()" class="ion-float-end" *ngIf="!!result">
+      Reset
+    </ion-button>
   </ion-grid>
 
   <app-result [result]="result" [convertor]="1" *ngIf="!!result"></app-result>

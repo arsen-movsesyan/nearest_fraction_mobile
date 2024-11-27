@@ -1,29 +1,28 @@
 <div id="container">
-  <ion-card>
-    <ion-card-content>
+  <ion-item>
 
-      <div *ngIf="convertor === 1">
-        <app-decimal-display [decimal]="result.decimal"></app-decimal-display>
-      </div>
-      <div *ngIf="convertor === 2">
-        <app-fraction-display
-          [whole]="result.whole"
-          [numerator]="result.numerator"
-          [denominator]="result.denominator"></app-fraction-display>
-      </div>
 
-      <ion-icon name="arrow-forward" color="success" size="large"></ion-icon>
+    <div class="ion-float-start">
+      <app-decimal-display [decimal]="result.decimal" *ngIf="convertor === 1"></app-decimal-display>
 
-      <div *ngIf="convertor === 1">
-        <app-fraction-display
-          [whole]="result.whole"
-          [numerator]="result.numerator"
-          [denominator]="result.denominator"></app-fraction-display>
-      </div>
-      <div *ngIf="convertor === 2">
-        <app-decimal-display [decimal]="result.decimal"></app-decimal-display>
-      </div>
+      <app-fraction-display
+        [whole]="result.whole"
+        [numerator]="result.numerator"
+        [denominator]="result.denominator" *ngIf="convertor === 2"></app-fraction-display>
+    </div>
 
-    </ion-card-content>
-  </ion-card>
+
+    <ion-icon name="arrow-forward" color="success" class="ion-margin"></ion-icon>
+
+    <div class="ion-float-end">
+      <app-fraction-display
+        [whole]="result.whole"
+        [numerator]="result.numerator"
+        [denominator]="result.denominator" *ngIf="convertor === 1"></app-fraction-display>
+
+      <app-decimal-display [decimal]="result.decimal" *ngIf="convertor === 2"></app-decimal-display>
+    </div>
+
+
+  </ion-item>
 </div>
